@@ -6,7 +6,7 @@ app.factory('Project', function ($http) {
 	function Project (props) {
 		angular.extend(this, props);
 	}
-	Project.url = 'api/project';
+	Project.url = 'api/project/';
 	Object.defineProperty(Project.prototype, 'url', {
 		get: function(){
 			return Project.url + this._id;
@@ -14,10 +14,10 @@ app.factory('Project', function ($http) {
 	});
 
 	Project.prototype.fetch = function () {
-		return {
-			_id: 123,
-			title: "Bidacity"
-		}
+		return $http.get(this.url)
+			.then(function (suc) {
+				return suc.data;
+			})
 	}
 
 	return Project;

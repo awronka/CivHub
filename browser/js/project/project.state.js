@@ -6,10 +6,24 @@ app.config(function ($stateProvider){
 		controller: 'ProjectController',
 		resolve: {
 			project: function (Project, $stateParams) {
-				// In view mode, 
 				var proj = new Project({_id: $stateParams.id});
-				console.log('Returned project resolve: ', proj);
 				return proj.fetch();
+			}
+		}
+	})
+	.state('editor', {
+		url: '/project/:id/edit',
+		params: {project: null},
+		templateUrl: 'js/project/project.editor.html',
+		controller: 'ProjectController',
+		resolve: {
+			project: function (Project, $stateParams, $http) {
+				// If a project is passed, return it, otherwise look in db
+				if ($stateParams.project) return $stateParams.project;
+				else {
+					var proj = new Project({_id: $stateParams.id});
+					return proj.fetch();
+				}
 			}
 		}
 	});
