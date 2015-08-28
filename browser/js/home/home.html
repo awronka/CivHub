@@ -10,7 +10,7 @@
 		<h3>Load a Project</h3>
 		<form>
 			<input type="text" placeholder="Code" ng-model="project.id"/>
-			<button ui-sref="project">Load</button>		
+			<button ui-sref="project({id: project.id})">Load</button>		
 		</form>
 	</div>
 </section>
