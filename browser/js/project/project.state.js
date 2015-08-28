@@ -19,11 +19,11 @@ app.config(function ($stateProvider){
 		resolve: {
 			project: function (Project, $stateParams, $http) {
 				// If a project is passed, return it, otherwise look in db
-				if ($stateParams.project) return $stateParams.project;
-				else {
+				// if ($stateParams.project) return $stateParams.project;
+				// else {
 					var proj = new Project({_id: $stateParams.id});
 					return proj.fetch();
-				}
+				// }
 			}
 		}
 	});

@@ -23,6 +23,14 @@ router.get('/:id', function (req, res, next) {
 	res.json(req.project);
 });
 
+router.put('/update', function (req, res, next) {
+	Project.findByIdAndUpdate(req.body.project._id, req.body.project, {upsert:true}, function (err, project) {
+		if (err) return next(err);
+		console.log('Found and updated project', project);
+		res.json(project);
+	})
+});
+
 router.post('/create', function (req, res, next) {
 	// Create
 	Project.create(req.body)
@@ -31,6 +39,13 @@ router.post('/create', function (req, res, next) {
 		res.status(201).json(project);
 	})
 	.then(null, next);
+});
+
+router.delete('/delete', function (req, res, next) {
+	// Find by ID
+	Project.findByIdAndRemove(req.body._id, function (err, doc) {
+		res.send('Deleted');
+	});
 });
 
 module.exports = router;
