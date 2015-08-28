@@ -1,0 +1,13 @@
+<h4>Project:</h4>
+<h1>{{project.title}}</h1>
+<br>
+Language: {{project.language}}<br>
+Created: {{project.started}}<br>
+<br>
+Problem Statement:
+<input type="text" ng-model="project.problem_statement" /><br>
+Description:
+<input type="text" ng-model="project.description" /><br>
+<br>
+<button ng-click="updateProject({project: project})">Save</button>
+<button ng-click="deleteProject({project: project})">Delete</button>
