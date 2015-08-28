@@ -13,11 +13,12 @@ app.factory('Project', function ($http) {
 		}
 	});
 
-	Project.fetch = function () {
+	Project.prototype.fetch = function () {
 		return {
-			"_id": 12424,
-			"title": "Bidacity"
+			_id: 123,
+			title: "Bidacity"
 		}
 	}
 
+	return Project;
 });
