@@ -1,4 +1,6 @@
-app.controller('HomeController', function ($scope, $http, $state, $translate) {
+'use strict';
+
+app.controller('CreateController', function ($scope, $http, $state, $translate) {
 
 	// Create New Project
 	$scope.createProject = function (proj) {
@@ -8,10 +10,10 @@ app.controller('HomeController', function ($scope, $http, $state, $translate) {
 		$http.post('/api/project/create', proj)
 			.then(function (suc) {
 				// Go to Newly Created Editor
-				$state.go('editor', {id: suc.data._id, project: suc.data});
+				$state.go('projectEdit', {id: suc.data._id, project: suc.data});
 			}, function (fail) {
 				console.log(fail);
 			});
-	}
+		}
 
 });

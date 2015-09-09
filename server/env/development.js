@@ -1,19 +1,14 @@
 module.exports = {
   "DATABASE_URI": "mongodb://localhost:27017/civihub",
   "SESSION_SECRET": "Optimus Prime is my real dad",
+  "GITHUB": {
+    "clientID": "bae7cf449ea2e3b7b008",
+    "clientSecret": "7765c82cfaa6830f9968237f4e40001d17683944",
+    "callbackURL": "http://127.0.0.1:1337/auth/github/callback"
+  },
   "TWITTER": {
-    "consumerKey": "INSERT_TWITTER_CONSUMER_KEY_HERE",
-    "consumerSecret": "INSERT_TWITTER_CONSUMER_SECRET_HERE",
-    "callbackUrl": "INSERT_TWITTER_CALLBACK_HERE"
-  },
-  "FACEBOOK": {
-    "clientID": "INSERT_FACEBOOK_CLIENTID_HERE",
-    "clientSecret": "INSERT_FACEBOOK_CLIENT_SECRET_HERE",
-    "callbackURL": "INSERT_FACEBOOK_CALLBACK_HERE"
-  },
-  "GOOGLE": {
-    "clientID": "INSERT_GOOGLE_CLIENTID_HERE",
-    "clientSecret": "INSERT_GOOGLE_CLIENT_SECRET_HERE",
-    "callbackURL": "INSERT_GOOGLE_CALLBACK_HERE"
+    "consumerKey": "4DvwjMznzC451qSCpTrG6kVaP",
+    "consumerSecret": "cqh4I8DJbzXPMQ4L1L1PjS3LTu3q9MZdYG6kruCGUnw4xaJlJR",
+    "callbackUrl": "http://127.0.0.1:1337/auth/twitter/callback"
   }
 };
