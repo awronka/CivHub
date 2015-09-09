@@ -16,13 +16,18 @@ module.exports = function (app) {
     };
 
     var createNewUser = function (token, tokenSecret, profile) {
+        console.log(profile);
         return UserModel.create({
+            name: profile.displayName,
+            avatar: profile.photos[0].value,
             twitter: {
                 id: profile.id,
                 username: profile.username,
                 token: token,
                 tokenSecret: tokenSecret
-            }
+            },
+            language: profile.lang,
+            isAdmin: false
         });
     };
 
@@ -65,3 +70,4 @@ module.exports = function (app) {
         });
 
 };
+

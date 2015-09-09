@@ -6,6 +6,9 @@ app.config(function ($urlRouterProvider, $locationProvider, $translateProvider) 
     $locationProvider.html5Mode(true);
     // If we go to a URL that ui-router doesn't have registered, go to the "/" url.
     $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.when('/auth/:provider', function () {
+        window.location.reload();
+    });
     // i18n SETTINGS
     var fileNameConvention = {
         prefix: 'locale-',

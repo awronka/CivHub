@@ -13,7 +13,9 @@
 </head>
 <body ng-app="CiviHub">
     <navbar></navbar>
-    <div id="main" ui-view></div>
-    <footer data-ng-show="$state.includes('home')"></footer>
+    <div id="main" >
+        <ui-view></ui-view>    
+    </div>
+    <footer ng-show="$state.includes('home')"></footer>
 </body>
 </html>

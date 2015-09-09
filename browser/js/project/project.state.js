@@ -1,6 +1,8 @@
-app.config(function ($stateProvider){
+'use strict';
+
+app.config(function ($stateProvider) {
 	$stateProvider
-	.state('project', {
+	.state('projectView', {
 		url: '/project/:id',
 		templateUrl: 'js/project/project.view.html',
 		controller: 'ProjectController',
@@ -11,7 +13,7 @@ app.config(function ($stateProvider){
 			}
 		}
 	})
-	.state('editor', {
+	.state('projectEdit', {
 		url: '/project/:id/edit',
 		params: {project: null},
 		templateUrl: 'js/project/project.editor.html',

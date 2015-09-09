@@ -3,27 +3,28 @@ var crypto = require('crypto');
 var mongoose = require('mongoose');
 
 var schema = new mongoose.Schema({
-    email: {
-        type: String
+    "name": { type: String },
+    "emails": [{ type: String }],
+    "avatar": { type: String },
+    "password": { type: String },
+    "salt": { type: String },
+    "github": {
+        id: String,
+        username: String
     },
-    password: {
-        type: String
-    },
-    salt: {
-        type: String
-    },
-    twitter: {
+    "twitter": {
         id: String,
         username: String,
         token: String,
         tokenSecret: String
     },
-    facebook: {
-        id: String
-    },
-    google: {
-        id: String
-    }
+    "language": { type: String },
+    "joined": { type: Date, default: Date.now },
+    "isAdmin": { type: Boolean, default: false },
+
+    "collaborations": [{type: mongoose.Schema.Types.ObjectId, ref: 'Project'}],
+    "invites": { type: Number, default: 0 },
+    "invited": [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }]
 });
 
 // generateSalt, encryptPassword and the pre 'save' and 'correctPassword' operations

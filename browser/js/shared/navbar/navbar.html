@@ -1,9 +1,14 @@
 <nav class="navbar">
 	<div class="container">
-		<span ui-sref="home">logo</span>
+		<span class='logo' ui-sref="showcase.projects">CivHub</span>
+		<form on-submit ng-submit="submitSearch(query)">
+			<input type="text" placeholder="Find a project" ng-model='query'/>
+			<button type='submit' translate="SEARCH"></button>
+		</form>
 		<ul>
-			<li>Login</li>
-			<li>Signup</li>
+			<li translate="SHARE YOUR WORK" ui-sref="create"></li>
+			<li ng-repeat="item in itemsHide" ng-hide="isLoggedIn()" ui-sref="{{item.state}}" translate="{{item.label}}"></li>
+			<li ng-repeat="item in itemsShow" ng-show="isLoggedIn()" ui-sref="{{item.state}}" translate="{{item.label}}"></li>
 		</ul>
 	</div>
 </nav>

@@ -18,7 +18,7 @@ var schema = new mongoose.Schema({
 	"currency": String,
 
 	"status": String,
-	"started": {type: Date, default: Date.now},
+	"started": Date,
 	"estimate": {
 		"time": Date,
 		"cost": Number
@@ -35,7 +35,15 @@ var schema = new mongoose.Schema({
 		"file_url": String
 	}],
 	"implementations": [{type: mongoose.Schema.Types.ObjectId, ref: 'Project'}], //otherwise use links?
-	"contributors": [{type: mongoose.Schema.Types.ObjectId, ref: 'Contact'}]	// embed info in doc? - if so, we have to have a user, not a contact that is bidacity/civic-tracker specific
+	"contributors": [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],	// embed info in doc? - if so, we have to have a user, not a contact that is bidacity/civic-tracker specific
+
+
+
+
+	"created": { type: Date, default: Date.now },
+	"lastUpdated": { type: Date },
+	"hasBeenShowcased": { type: Boolean, default: false},
+	"currentlyShowcased": { type: Boolean, default: false}
 });
 
 
