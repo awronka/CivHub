@@ -1,10 +1,19 @@
-<h4>Project:</h4>
-<h1>{{project.title}}</h1>
-<br>
-Language: {{project.language}}<br>
-Created: {{project.started}}<br>
-<br>
-Problem Statement: {{project.problem_statement}}<br>
-Description: {{project.description}}<br>
-<br>
-<button ui-sref="projectEdit({id: project._id, project: project})">Edit</button>
+<div class="header-section">
+	<h4>Problem</h4>
+	Problem Statement: {{project.problem_statement}}
+</div>
+
+<div class="project-solution">
+	<h4>Solution</h4>
+	<h1>{{project.title}}</h1>
+	<button ui-sref="projectEdit({id: project._id, project: project})">Edit</button>
+	<div class="project-solution-description">
+		Description: {{project.description}}
+	</div>
+	<div class="project-solution-activity">
+		<ul>
+			<li>Created: {{project.started}}</li>
+		</ul>
+	</div>
+</div>
+

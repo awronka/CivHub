@@ -5,6 +5,6 @@ app.directive('footer', function (){
 		restrict: 'E',
 		scope: {},
 		controller: 'LanguageController',
-		templateUrl: 'js/shared/foot/foot.html'
+		templateUrl: 'js/common/footer/footer.html'
 	};
 })

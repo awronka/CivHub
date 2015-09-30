@@ -11,11 +11,13 @@
     <script src="/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
     <script src="/main.js"></script>
 </head>
+
 <body ng-app="CiviHub">
     <navbar></navbar>
     <div id="main" >
         <ui-view></ui-view>    
     </div>
-    <footer ng-show="$state.includes('home')"></footer>
+    <footer ng-show="$state.includes('showcase')"></footer>
 </body>
+
 </html>

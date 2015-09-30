@@ -1,0 +1,14 @@
+.project-tile {
+	width: 80%;
+	margin: 0 auto 0;
+
+	&-problem {
+		width: 50%;
+		float: left;
+		background-color: gray;
+	}
+	&-solution {
+		width: 50%;
+		float: left;
+	}
+}

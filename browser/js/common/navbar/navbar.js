@@ -3,7 +3,7 @@ app.directive('navbar', function ($rootScope, AuthService, AUTH_EVENTS, $state) 
     return {
         restrict: 'E',
         scope: {},
-        templateUrl: 'js/shared/navbar/navbar.html',
+        templateUrl: 'js/common/navbar/navbar.html',
         controller: function ($scope) {
 
             // NAV ITEMS
@@ -12,7 +12,8 @@ app.directive('navbar', function ($rootScope, AuthService, AUTH_EVENTS, $state) 
                 { label:'LOGIN', state:'login', auth: true }
             ]
             $scope.itemsShow = [
-                { label:'MYPROFILE', state:'profile', auth: true}
+                { label:'SHAREYOURPROJECT', state:'create', auth: true},
+                { label:'MYPROFILE', state:'profile.contributions', auth: true}
             ]
 
             // LOGIN

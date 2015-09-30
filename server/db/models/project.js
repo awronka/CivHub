@@ -7,10 +7,10 @@ var schema = new mongoose.Schema({
 	"problem_statement": String,
 	"description": String,
 	"tags": [String],
-	"working_from": [{type: mongoose.Schema.Types.ObjectId, ref: 'Project'}], //otherwise, use links?
+	"dependencies": [{type: mongoose.Schema.Types.ObjectId, ref: 'Project'}], //otherwise, use links?
 	"link": String,
 	
-	"language": {type: String, required: true},
+	"language": {type: String},
 	"location": {
 		"ISO": String,
 		"coordinates": [Number]
@@ -24,7 +24,7 @@ var schema = new mongoose.Schema({
 		"cost": Number
 	},
 	"activity": [{
-		"event": String,
+		"event_type": String,
 		"note": String,
 		"date": Date,
 		"spent": Number
@@ -39,11 +39,13 @@ var schema = new mongoose.Schema({
 
 
 
-
+	"logo": {type: String, required: false},
 	"created": { type: Date, default: Date.now },
-	"lastUpdated": { type: Date },
-	"hasBeenShowcased": { type: Boolean, default: false},
-	"currentlyShowcased": { type: Boolean, default: false}
+	"last_updated": { type: Date },
+	"has_been_showcased": { type: Boolean, default: false},
+	"currently_showcased": { type: Boolean, default: false},
+	"appreciations": Number,
+	"comments": [{type: mongoose.Schema.Types.ObjectId, ref: 'Comment'}]
 });
 
 

@@ -1,7 +1,13 @@
 // Globals
 @import 'global/reset';
+@import 'global/colors';
+@import 'global/typography';
 @import 'global/form';
+@import 'global/format';
 // Partials
-@import 'home/main';
-@import 'components/footer';
-@import 'components/navbar';
+@import 'showcase/main';
+@import 'project/project.tile';
+@import 'project/project.view';
+// Shared
+@import 'common/footer';
+@import 'common/navbar';

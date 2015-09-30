@@ -4,8 +4,8 @@ var chalk = require('chalk');
 var util = require('util');
 
 var rootPath = path.join(__dirname, '../../../');
-var indexPath = path.join(rootPath, './server/app/views/index.html');
-var faviconPath = path.join(rootPath, './server/app/views/favicon.png');
+var indexPath = path.join(rootPath, './browser/index.html');
+var faviconPath = path.join(rootPath, './browser/favicon.png');
 
 var env = require(path.join(rootPath, './server/env'));
 

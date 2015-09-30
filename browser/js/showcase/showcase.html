@@ -1,7 +1,13 @@
-<div class="container">
-	<ul>
-		<li ui-sref="showcase.projects">Project</li>
-		<li ui-sref="showcase.products-and-services">Product/Service</li>
-	</ul>
+<div class="header-section">
+	<h2>Find, Learn, and Collaborate</h2>
+	<h4>with others improving government and civic life around the world.</h4>
+	<form on-submit ng-submit="submitSearch(query)" >
+		<input type="text" placeholder="Find a project" ng-model='query'/>
+		<button type='submit' translate="SEARCH"></button>
+	</form>
 </div>
-<ui-view></ui-view>
+
+<div class="showcase-projects">
+	<h4>Recent Projects</h4>
+	<ui-view></ui-view>
+</div>

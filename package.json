@@ -1,5 +1,5 @@
 {
-  "name": "CiviHub",
+  "name": "CivHub",
   "version": "1.0.0",
   "description": "A simple interface for documenting civic projects",
   "main": "server/start.js",

@@ -1,0 +1,13 @@
+<div class="header-section">
+	<img src="{{user.avatar}}" />
+	Name: {{user.name}}
+
+	<ul>
+		<li ui-sref="profile.contributions">Contributions</li>
+		<li ui-sref="profile.appreciations">Appreciations</li>
+		<li ui-sref="profile.requests">Requests</li>
+		<li ui-sref="profile.settings">Settings</li>
+	</ul>
+</div>
+
+<ui-view></ui-view>
