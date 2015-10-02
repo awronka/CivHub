@@ -8,14 +8,16 @@ app.config(function ($stateProvider) {
 		templateUrl: 'js/profile/profile.html',
 		controller: 'ProfileController',
 		resolve: {
-			user: function (AuthService) {
-				return AuthService.getLoggedInUser()
+			user: function ($http, AuthService, User) {
+				var id = AuthService.getLoggedInUser()['$$state']['value']['_id'];
+				var user = new User({_id: id});
+				return user.fetch();
 			}
 		}
 	})
-	.state('profile.contributions', {
+	.state('profile.collaborations', {
 		url: '',
-		templateUrl: 'js/profile/profile-contributions.html'
+		templateUrl: 'js/profile/profile-collaborations.html'
 	})
 	.state('profile.appreciations', {
 		url: '',
