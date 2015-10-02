@@ -1,16 +1,9 @@
 <section id="home">
 	<div>
-		<h3>Document a New Project</h3>
+		<h3>We're excited to see what you made! What's it called?</h3>
 		<form ng-submit="createProject({title: projectTitle})">
 			<input type="text" placeholder="Name of Project" ng-model="projectTitle" required/>
 			<button type="submit">Create</button>
-		</form>
-	</div>
-	<div>
-		<h3>Load a Project</h3>
-		<form>
-			<input type="text" placeholder="Code" ng-model="projectId" required/>
-			<button ui-sref="project({id: projectId})">Load</button>		
 		</form>
 	</div>
 </section>

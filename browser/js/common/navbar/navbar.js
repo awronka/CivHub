@@ -13,7 +13,7 @@ app.directive('navbar', function ($rootScope, AuthService, AUTH_EVENTS, $state) 
             ]
             $scope.itemsShow = [
                 { label:'SHAREYOURPROJECT', state:'create', auth: true},
-                { label:'MYPROFILE', state:'profile.contributions', auth: true}
+                { label:'MYPROFILE', state:'profile.collaborations', auth: true}
             ]
 
             // LOGIN

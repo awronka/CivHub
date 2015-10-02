@@ -5,6 +5,11 @@ app.config(function ($stateProvider) {
 	.state('create', {
 		url: '/create',
 		templateUrl: 'js/create/create.html',
-		controller: 'CreateController'
+		controller: 'CreateController',
+		resolve: {
+			user: function (AuthService) {
+				return AuthService.getLoggedInUser();
+			}
+		}
 	});
 });

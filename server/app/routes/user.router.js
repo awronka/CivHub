@@ -17,7 +17,7 @@ var ensureAuthenticated = function (req, res, next) {
 // Evaluate Id
 router.param('id', function (req, res, next, id) {
 	console.log('resolving for user');
-	User.findById(id).exec()
+	User.findById(id).populate('collaborations').exec()
 		.then(function (user) {
 			if (!user) throw HttpError(404);
 			else {

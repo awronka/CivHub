@@ -3,6 +3,7 @@
 var router = require('express').Router();
 var mongoose = require('mongoose');
 var Project = mongoose.model('Project');
+var User = mongoose.model('User');
 
 // Evaluate Id
 router.param('id', function (req, res, next, id) {
@@ -31,6 +32,22 @@ router.get('/', function (req, res, next) {
 	});
 });
 
+router.post('/search', function (req, res, next) {
+	var regex = new RegExp(req.body.query, 'i');
+	Project.find()
+	.or([{
+			title: regex
+		},{
+			description: regex
+		},{
+			problem_statement: regex
+		}])
+	.exec(function (err, projects) {
+		if (err) return handleError(err);
+		res.json(projects);
+	});
+});
+
 // Update a Project
 router.put('/update', function (req, res, next) {
 	Project.findByIdAndUpdate(req.body.project._id, req.body.project, {upsert:true}, function (err, project) {
@@ -42,10 +59,20 @@ router.put('/update', function (req, res, next) {
 
 // Create a Project
 router.post('/create', function (req, res, next) {
-	// Create
-	Project.create(req.body)
+	// Create Project
+	Project.create(req.body.project, function (err, newProject) {
+		// Find Creator in DB
+		User.findById(req.body.userId, function (err, foundUser) {
+			// Add Project to User Contributions
+			foundUser.collaborations.push(newProject._id);
+			foundUser.save();
+			// Add Creators Id to Contributors Array 
+			newProject.contributors.push(req.body.userId);
+			newProject.save();
+		})
+	})
 	.then(function (project) {
-		// Send back
+		// Send back project
 		res.status(201).json(project);
 	})
 	.then(null, next);

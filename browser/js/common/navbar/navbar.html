@@ -5,6 +5,7 @@
 			<input type="text" placeholder="Find a project" ng-model='query'/>
 			<button type='submit' translate="SEARCH"></button>
 		</form>
+		<a href="#" ng-show="$parent.$state.includes('showcase')">Want to use this data for your project?</a>
 		<ul>
 			<li ng-repeat="item in itemsHide" ng-hide="isLoggedIn()" ui-sref="{{item.state}}" translate="{{item.label}}"></li>
 			<li ng-repeat="item in itemsShow" ng-show="isLoggedIn()" ui-sref="{{item.state}}" translate="{{item.label}}"></li>
