@@ -7,7 +7,7 @@ app.directive('onSubmit', function($state){
 			// SEARCH
 		    scope.submitSearch = function (query) {
 		    	elem.children().val('');
-		        $state.go('search', {query: query});
+	        $state.go('search', {query: query});
 		    }
 		}
 	}

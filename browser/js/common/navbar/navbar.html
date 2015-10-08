@@ -1,14 +1,23 @@
-<nav class="navbar">
+<nav class="navbar cf">
+
 	<div class="container">
-		<span class='logo' ui-sref="showcase.projects">CivHub</span>
-		<form on-submit ng-submit="submitSearch(query)" ng-hide="$parent.$state.includes('showcase')">
-			<input type="text" placeholder="Find a project" ng-model='query'/>
-			<button type='submit' translate="SEARCH"></button>
-		</form>
-		<a href="#" ng-show="$parent.$state.includes('showcase')">Want to use this data for your project?</a>
-		<ul>
-			<li ng-repeat="item in itemsHide" ng-hide="isLoggedIn()" ui-sref="{{item.state}}" translate="{{item.label}}"></li>
-			<li ng-repeat="item in itemsShow" ng-show="isLoggedIn()" ui-sref="{{item.state}}" translate="{{item.label}}"></li>
-		</ul>
+
+		<div class="eight columns">
+			<span class='logo' ui-sref="showcase.projects">civhub</span>
+			<form class="eight columns" on-submit ng-submit="submitSearch(query)" ng-hide="$parent.$state.includes('showcase')">
+				<input type="text" placeholder="Find problems and solutions" ng-model='query'/>
+				<button class="uw-btn-default" type='submit' translate="SEARCH"></button>
+			</form>
+			<a href="#" ng-show="$parent.$state.includes('showcase')">Want to use this data for your project?</a>
+		</div>
+
+		<div class="four columns float-right">
+			<ul>
+				<li ng-repeat="item in itemsHide" ng-hide="isLoggedIn()" ui-sref="{{item.state}}" translate="{{item.label}}"></li>
+				<li ng-repeat="item in itemsShow" ng-show="isLoggedIn()" ui-sref="{{item.state}}" translate="{{item.label}}"></li>
+			</ul>
+		</div>
+
 	</div>
+
 </nav>

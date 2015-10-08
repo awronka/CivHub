@@ -1,3 +1,8 @@
 {
-	"HELLO": "bonjour"
+  "LOGIN": "S'identifier",
+  "SIGNUP": "Signer",
+  "ADMIN": "Admin",
+  "SEARCH": "Recherche",
+  "PROFILE": "Profil",
+  "SHAREAPROJECT": "Partager un projet"
 }

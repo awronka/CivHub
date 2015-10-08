@@ -1,13 +1,29 @@
-<div class="header-section">
-	<h2>Find, Learn, and Collaborate</h2>
-	<h4>with others improving government and civic life around the world.</h4>
-	<form on-submit ng-submit="submitSearch(query)" >
-		<input type="text" placeholder="Find a project" ng-model='query'/>
-		<button type='submit' translate="SEARCH"></button>
-	</form>
+<div class="showcase header-section">
+  <div class="container">
+    <h2>Find, Learn, and Collaborate</h2>
+    <p>to improve government and civic life around the world.</p>
+    <form on-submit ng-submit="submitSearch(query)" >
+      <input class="six columns" type="text" placeholder="Find a project" ng-model='query'/>
+      <button class="uw-btn-default" type='submit' translate="SEARCH"></button>
+    </form>
+  </div>
 </div>
 
-<div class="showcase-projects">
-	<h4>Recent Projects</h4>
-	<ui-view></ui-view>
+<div class="content-section-navigation">
+  <div class="container cf">
+    <ul>
+      <li ui-sref="showcase.projects" ui-sref-active="active">Featured Problems + Solutions</li>
+      <li>Newly Added</li>
+      <li>Active</li>
+      <li>Works in Progress</li>
+    </ul>
+  </div>
+</div>
+
+<div class="showcase-projects content-section">
+
+  <div class="container">
+    <ui-view></ui-view>
+  </div>
+
 </div>

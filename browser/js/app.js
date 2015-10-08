@@ -1,7 +1,7 @@
 'use strict';
 window.app = angular.module('CiviHub', ['ui.router', 'fsaAuth', 'pascalprecht.translate']);
 
-app.config(function ($urlRouterProvider, $locationProvider, $translateProvider) {
+app.config(function ($urlRouterProvider, $locationProvider, $translateProvider, $provide) {
     // This turns off hashbang urls (/#about) and changes it to something normal (/about)
     $locationProvider.html5Mode(true);
     // If we go to a URL that ui-router doesn't have registered, go to the "/" url.
@@ -30,6 +30,7 @@ app.config(function ($urlRouterProvider, $locationProvider, $translateProvider) 
         .determinePreferredLanguage() // Get the user's system language
         .fallbackLanguage(['en']) // If their system uses a lang we don't support, fall back to this lang
         .useSanitizeValueStrategy('sanitizeParameters'); //Prevents hacking of interpolated strings
+
 });
 
 // This app.run is for controlling access to specific states.
@@ -70,6 +71,11 @@ app.run(function ($rootScope, AuthService, $state) {
             }
         });
 
+    });
+
+    // Make sure always starting at the top of page when changing state
+    $rootScope.$on('$stateChangeSuccess',function(){
+        $("html, body").animate({ scrollTop: 0 });
     });
 
 });

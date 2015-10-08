@@ -15,10 +15,10 @@ app.config(function ($stateProvider){
 	})
 	.state('showcase.projects', {
 		url: '',
-		templateUrl: 'js/showcase/projects/projects.html'
+		templateUrl: 'js/showcase/projects.html'
 	})
 	.state('showcase.products-and-services', {
 		url: '',
-		templateUrl: 'js/showcase/product-and-service/products-and-services.html'
+		templateUrl: 'js/showcase/products-and-services.html'
 	});	
 });

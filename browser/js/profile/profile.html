@@ -1,13 +1,23 @@
 <div class="header-section">
-	<img src="{{user.avatar}}" />
-	Name: {{user.name}}
-
-	<ul>
-		<li ui-sref="profile.collaborations">Collaborations</li>
-		<li ui-sref="profile.appreciations">Appreciations</li>
-		<li ui-sref="profile.requests">Requests</li>
-		<li ui-sref="profile.settings">Settings</li>
-	</ul>
+  <div class="container header-profile">
+    <!-- <img src="{{user.avatar}}" /> -->
+    <h2>{{user.name}}</h2>
+  </div>
 </div>
 
-<ui-view></ui-view>
+<div class="content-section-navigation">
+  <div class="container cf">
+    <ul>
+      <li ui-sref="profile.collaborations" ui-sref-active="active">Collaborations</li>
+      <li ui-sref="profile.appreciations" ui-sref-active="active">Appreciations</li>
+      <li ui-sref="profile.requests" ui-sref-active="active">Requests</li>
+      <li ui-sref="profile.settings" ui-sref-active="active">Settings</li>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <div class="content-section">
+    <ui-view></ui-view>    
+  </div>
+</div>

@@ -1,0 +1,25 @@
+// Clearing
+.container:after,
+.row:after,
+.cf {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.float-center {
+  width: auto;
+  margin: 0 auto;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}

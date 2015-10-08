@@ -1,0 +1,83 @@
+<div class="header-section">
+    <div class="container">
+        <span class="label">Problem Statement</span>
+        <h2>{{project.problem_statement}}<h2>
+    </div>
+</div>
+
+<div class="project-view-solution content-section">
+    <!-- Solution Header -->
+    <div class="container project-view-header">
+        <span class="label">Solution</span>
+        <div class="nine columns float-left">
+            <h2>{{project.title}}</h2>
+        </div>
+        <div class="three columns project-actions">
+            <button class="uw-btn-default" 
+                    ui-sref="projectEdit({id: project._id, project: project})"
+                    ng-show="isAContributor(project)">Edit</button>
+            <button class="uw-btn-default">Appreciate</button>
+        </div>
+    </div>
+
+
+    <!-- Solution Details -->
+    <div class="container">
+        <!-- Main Container -->
+        <div class="eight columns float-left">
+            <div class="project-view-description project-view-details">
+                <span class="label">Solution Statement</span>
+                <h4>{{project.solution_statement}}</h4>
+                <hr>
+                <span class="label">Description</span>
+                <p>{{project.description}}</p>
+            </div>
+            <div class="project-view-description project-view-details">
+                Activity: {{project.activity}}
+            </div>
+            <div class="project-view-description project-view-details">
+                Requests: {{project.comments}}
+            </div>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="four columns float-right">
+            <div  class="project-view-activity project-view-details">
+                <span class="label">Problem Tags</span>
+                <ul>
+                    <li ng-repeat="tag in project.problem_tags">
+                      <span class="tag" ng-click="$state.go('search', {query: tag});">{{tag}}</span>
+                    </li>
+                </ul>
+                <hr>
+                <span class="label">Solution Tags</span>
+                <ul>
+                    <li ng-repeat="tag in project.solution_tags">
+                      <span class="tag" ng-click="$state.go('search', {query: tag});">{{tag}}</span>
+                    </li>
+                </ul>
+            </div>            
+            <div class="project-view-activity project-view-details">
+                <ul>
+                    <li>{{project.contributors.length}} Contributor(s)</li>
+                </ul>
+            </div>
+            <div class="project-view-activity project-view-details">
+                <ul>
+                    <li>Dependencies: {{project.started}}</li>
+                </ul>
+            </div>
+            <div class="project-view-activity project-view-details">
+                <ul>
+                    <li>Links: {{project.started}}</li>
+                </ul>
+            </div>
+            <div class="project-view-activity project-view-details">
+                <ul>
+                    <li>Resources: {{project.started}}</li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+</div>

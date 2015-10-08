@@ -1,0 +1,29 @@
+.auth-panel {
+
+  text-align: center;
+
+  a {
+    @extend button;
+    @extend .uw-btn-default;
+    text-decoration: none;
+    -webkit-appearance: none;
+  }
+
+  h6 {
+    font-weight: 400;
+    margin: 0;
+  }
+
+  button {
+    margin-top: 1rem;
+    margin-right: .5rem;
+    margin-left: .5rem;
+    box-shadow: none;
+    border: 1px solid $uw-blue; 
+  }
+
+  .project-tile {
+    width: 100%;
+  }
+
+}

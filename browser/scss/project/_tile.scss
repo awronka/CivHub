@@ -1,0 +1,41 @@
+.project-tile {
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: $uw-white;
+  box-shadow: 0px 1px 1px 0px $uw-gray;
+	font-size: $uw-body;
+
+  p, h5 {
+    margin: 0;
+  }
+
+  h5 {
+    font-weight: 400;
+    font-size: $uw-headline;
+  }
+}
+
+.project-tile-problem, .project-tile-solution {
+  width: 50%;
+  float: left;
+  padding: 2.4rem;
+}
+
+.project-tile-problem {
+}
+
+.project-tile-solution {
+  border-left: 1px solid $uw-white-off;
+}
+
+.project-descriptor {
+  color: $uw-gray-off;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.project-tags {
+  li {
+    padding-right: .6rem;
+  }
+}

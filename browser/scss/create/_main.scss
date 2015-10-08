@@ -1,0 +1,11 @@
+.create-screen {
+  button, input {
+    float: left;
+  }
+  input {
+    width: 60%;
+  }
+  button {
+    border: 1px solid $uw-blue;
+  }
+}
