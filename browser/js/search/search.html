@@ -1,6 +1,11 @@
-<div>
-	Searching for {{query}}
-</div>
-<div class="search-projects">
-	<project-tile class="project-tile" ng-repeat="project in projects"></project-tile>
+<div class="project-editor">
+  <div class="content-section">
+    <div class="container">
+      <span class="label">Results for</span>
+      <h4>{{query}}</h4>
+      <div class="search-projects">
+      	<project-tile class="project-tile" ng-repeat="project in projects"></project-tile>
+      </div>
+    </div>
+  </div>
 </div>

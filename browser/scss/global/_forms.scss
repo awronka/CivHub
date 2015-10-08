@@ -1,0 +1,24 @@
+input, select, th, td {
+	font-size: 1em;
+}
+
+input, textarea {
+  padding: 11px;
+  border: 0;
+  @include placeholder-color($uw-gray-dark);
+  box-shadow: inset 0px 2px 0px 0px $uw-gray;
+
+  &:focus{
+    outline: none;
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+li {
+	display: inline;
+	pointer: default;
+}
+

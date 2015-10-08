@@ -1,0 +1,46 @@
+.project-view-solution {
+
+  p {
+    margin: 0;
+  }
+  h2 {
+    margin-bottom: 0;
+  }
+  ul {
+    margin-bottom: 2rem;
+  }
+  label {
+    margin-bottom: .7rem;
+  }
+
+}
+
+.project-actions {
+  float: right;
+  button {
+    float: right;
+    margin-left: .6rem;
+  }
+}
+
+.project-view-details {
+  @extend .project-tile;
+  padding: 2.4rem;
+}
+
+.project-view-header {
+  margin-bottom: 2rem;
+}
+
+.project-view-description {
+  hr {
+    margin-top: 1.4rem;
+    margin-bottom: 1.4rem;
+  }
+}
+
+.project-view-activity {
+  ul {
+    margin-bottom: 0;    
+  }
+}

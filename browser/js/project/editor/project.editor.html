@@ -1,0 +1,59 @@
+<div class="project-editor">
+  <div class="content-section">
+    <div class="container">
+
+      <h4>Edit "{{project.title}}"</h4>
+
+      <div class="project-editor-tile cf">
+
+        <span class="label">Project Title</span>
+        <input ng-model="project.title">
+
+        <span class="label">Problem Statement</span>
+        <input ng-model="project.problem_statement" />
+
+        <span class="label">Solution Statement</span>
+        <input ng-model="project.solution_statement" />
+
+        <span class="label">Language</span>
+        <input ng-model="project.language" />
+
+        <span class="label">Problem Tags</span>
+        <input ng-model="project.problem_tags" />        
+
+        <span class="label">Solution Tags</span>
+        <input ng-model="project.solution_tags" /> 
+
+        <span class="label">Description</span>
+        <textarea type="text" ng-model="project.description"></textarea>
+
+        <span class="label">Links</span>
+
+      </div>
+
+      <div class="project-editor-tile cf">
+
+        <span class="label">Activity</span>
+
+      </div>
+
+      <div class="project-editor-tile cf">
+
+        <span class="label">Contributors</span>
+
+      </div>
+
+      <div class="project-editor-tile cf">
+
+        <span class="label">Documents</span>
+
+      </div>
+
+      <div class="float-right">
+        <button class="uw-btn-default" ng-click="updateProject(project)">Save</button>
+        <button class="uw-btn-default" ng-click="deleteProject(project)">Delete</button> 
+      </div>
+
+    </div>
+  </div>
+</div>

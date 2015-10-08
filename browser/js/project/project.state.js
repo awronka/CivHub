@@ -4,10 +4,10 @@ app.config(function ($stateProvider) {
 	$stateProvider
 	.state('projectView', {
 		url: '/project/:id',
-		templateUrl: 'js/project/project.view.html',
+		templateUrl: 'js/project/view/project.view.html',
 		controller: 'ProjectController',
 		resolve: {
-			project: function (Project, $stateParams) {
+			project: function ($stateParams, Project) {
 				var proj = new Project({_id: $stateParams.id});
 				return proj.fetch();
 			}
@@ -16,7 +16,7 @@ app.config(function ($stateProvider) {
 	.state('projectEdit', {
 		url: '/project/:id/edit',
 		params: {project: null},
-		templateUrl: 'js/project/project.editor.html',
+		templateUrl: 'js/project/editor/project.editor.html',
 		controller: 'ProjectController',
 		resolve: {
 			project: function (Project, $stateParams, $http) {

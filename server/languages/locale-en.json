@@ -1,9 +1,8 @@
 {
-	"SHARE YOUR WORK": "Share Your Work",
-	"LOGIN": "Login",
-	"SIGNUP": "Sign Up",
-	"ADMIN": "Admin",
-	"SEARCH": "Search",
-	"MYPROFILE": "My Profile",
-	"SHAREYOURPROJECT": "Share Your Project"
+  "LOGIN": "Login",
+  "SIGNUP": "Sign Up",
+  "ADMIN": "Admin",
+  "SEARCH": "Search",
+  "PROFILE": "Profile",
+  "SHAREAPROJECT": "Share A Project"
 }

@@ -1,13 +1,35 @@
+/*
+
+United Works Stlye Guide
+http://www.unitedworks.us
+
+*/
+
 // Globals
-@import 'global/reset';
-@import 'global/colors';
-@import 'global/typography';
-@import 'global/form';
-@import 'global/format';
-// Partials
-@import 'showcase/main';
-@import 'project/project.tile';
-@import 'project/project.view';
-// Shared
+@import 'global/variables';
+@import 'global/mixins';
+
+// Basecoat
+@import 'global/normalize';
+@import 'global/base';
+@import 'global/type';
+@import 'global/layout';
+@import 'global/lists';
+@import 'global/forms';
+@import 'global/buttons';
+@import 'global/misc';
+
+// Components
 @import 'common/footer';
 @import 'common/navbar';
+@import 'common/auth';
+@import 'showcase/main';
+@import 'project/tile';
+@import 'project/view';
+@import 'project/editor';
+@import 'showcase/main';
+@import 'profile/main';
+@import 'create/main';
+
+// Utilities
+@import 'global/util';

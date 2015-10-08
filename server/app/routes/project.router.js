@@ -16,7 +16,6 @@ router.param('id', function (req, res, next, id) {
 			next();
 		}
 	})
-	.then(next, null);
 });
 
 // Get Specific Projects
@@ -41,6 +40,10 @@ router.post('/search', function (req, res, next) {
 			description: regex
 		},{
 			problem_statement: regex
+		},{
+			solution_tags: regex
+		},{
+			problem_tags: regex
 		}])
 	.exec(function (err, projects) {
 		if (err) return handleError(err);
@@ -50,7 +53,7 @@ router.post('/search', function (req, res, next) {
 
 // Update a Project
 router.put('/update', function (req, res, next) {
-	Project.findByIdAndUpdate(req.body.project._id, req.body.project, {upsert:true}, function (err, project) {
+	Project.findByIdAndUpdate(req.body._id, req.body, {upsert:true}, function (err, project) {
 		if (err) return next(err);
 		console.log('Found and updated project', project);
 		res.json(project);
@@ -62,6 +65,7 @@ router.post('/create', function (req, res, next) {
 	// Create Project
 	Project.create(req.body.project, function (err, newProject) {
 		// Find Creator in DB
+		if (err) return next(err);
 		User.findById(req.body.userId, function (err, foundUser) {
 			// Add Project to User Contributions
 			foundUser.collaborations.push(newProject._id);
@@ -75,13 +79,13 @@ router.post('/create', function (req, res, next) {
 		// Send back project
 		res.status(201).json(project);
 	})
-	.then(null, next);
 });
 
 // Delete a Project
-router.delete('/delete', function (req, res, next) {
+router.put('/delete', function (req, res, next) {
 	// Find by ID
-	Project.findByIdAndRemove(req.body._id, function (err, doc) {
+	Project.findByIdAndRemove(req.body._id)
+	.then(function (err, doc) {
 		res.send('Deleted');
 	});
 });

@@ -1,0 +1,29 @@
+.footer {
+	position: fixed;
+	bottom: 0;
+	width: 100vw;
+	height: 4vh;
+  padding-top: .4rem;
+	background-color: rgba($uw-white, .9);
+  color: $uw-gray-dark;
+
+  ul {
+    float: left;
+    width: 80%;
+    margin: 0;
+  }
+
+  li {
+    padding-right: .6rem;
+    font-weight: 500;
+
+    &:hover {
+      color: $uw-black;
+    }
+  }
+
+  .made-by {
+    float: right;
+    color: $uw-gray-off;
+  }
+}

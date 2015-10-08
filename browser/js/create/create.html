@@ -1,9 +1,10 @@
-<section id="home">
-	<div>
-		<h3>We're excited to see what you made! What's it called?</h3>
-		<form ng-submit="createProject({title: projectTitle})">
-			<input type="text" placeholder="Name of Project" ng-model="projectTitle" required/>
-			<button type="submit">Create</button>
-		</form>
-	</div>
-</section>
+<div class="create-screen">
+  <div class="container margin-top-large">
+    <h6>We're excited to see what you're doing!</h6>
+    <h4>What's it called?</h4>
+    <form class="six columns" ng-submit="createProject({title: projectTitle})">
+      <input type="text" placeholder="Name of Project" ng-model="projectTitle" required/>
+      <button class="uw-btn-default" type="submit">Create</button>
+    </form>
+  </div>
+</div>

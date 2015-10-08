@@ -3,6 +3,6 @@
 app.directive('projectTile', function(){
 	return {
 		restrict: 'E',
-		templateUrl: 'js/showcase/projects/project-tile.html'
+		templateUrl: 'js/project/tile/project-tile.html'
 	}
 })

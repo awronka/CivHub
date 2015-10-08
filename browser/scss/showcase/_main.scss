@@ -1,0 +1,44 @@
+.header-section {
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+  background-color: $uw-blue;
+  background-image: url('images/cityscape.png');
+  background-size: 50%;
+  background-position: bottom;
+  background-repeat: repeat-x;
+
+  h2, p {
+    color: $uw-white;
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  &.showcase {
+    padding-top: 35vh;
+    height: 95vh;
+
+    h4 {
+      color: $uw-white;
+    }
+  }
+}
+
+.showcase-projects {
+
+  margin-bottom: 6rem;
+
+  h6 {
+    margin-bottom: -.5rem;
+  }
+
+  .column, .columns {
+    margin-left: 0;
+  }
+
+}
+
+.showcase-header h5, .showcase-header h6 {
+  color: $uw-blue;
+}

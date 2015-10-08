@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <base href="/" />
-    <title>CiviHub</title>
+    <title>CivHub</title>
     <link rel="stylesheet" type="text/css" href="/style.css" />
     <script src="/lodash/index.js"></script>
     <script src="/angular/angular.min.js"></script>
@@ -17,7 +17,9 @@
     <div id="main" >
         <ui-view></ui-view>    
     </div>
-    <footer ng-show="$state.includes('showcase')"></footer>
+    <footer ng-show="$state.includes('showcase') || $state.includes('signup') || $state.includes('login')"></footer>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 </body>
 
 </html>

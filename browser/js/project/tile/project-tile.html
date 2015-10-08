@@ -1,0 +1,33 @@
+<div class="project-tile cf">
+
+  <div class="project-tile-problem">
+    <h5 ui-sref="projectView({id: project._id})">
+      <span class="project-descriptor">P: </span>
+      {{project.problem_statement}}
+    </h5>
+    <span class="project-tags" ng-show="project.problem_tags.length !== 0">
+      <hr>
+      <ul>
+        <li ng-repeat="tag in project.problem_tags">
+          <span class="tag" ng-click="$state.go('search', {query: tag});">{{tag}}</span>
+        </li>
+      </ul>
+    </span>
+  </div>
+
+  <div class="project-tile-solution">
+    <h5 ui-sref="projectView({id: project._id})">
+      <span class="project-descriptor">S: </span>
+      {{project.solution_statement}}
+    </h5>
+    <span class="project-tags" ng-show="project.solution_tags.length !== 0">
+        <hr>
+        <ul>
+          <li ng-repeat="tag in project.solution_tags">
+            <span class="tag" ng-click="$state.go('search', {query: tag});">{{tag}}</span>
+          </li>
+        </ul>
+      </span> 
+  </div>
+
+</div>
