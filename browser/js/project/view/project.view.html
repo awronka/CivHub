@@ -33,10 +33,12 @@
                 <p>{{project.description}}</p>
             </div>
             <div class="project-view-description project-view-details">
-                Activity: {{project.activity}}
+                <span class="label">Activity</span>
+                {{project.activity}}
             </div>
             <div class="project-view-description project-view-details">
-                Requests: {{project.comments}}
+                <span class="label">Requests</span>
+                {{project.comments}}
             </div>
         </div>
         
@@ -58,26 +60,32 @@
                 </ul>
             </div>            
             <div class="project-view-activity project-view-details">
+                <span class="label">{{project.contributors.length}} Contributing</span>
                 <ul>
-                    <li>{{project.contributors.length}} Contributor(s)</li>
+                    <li ng-repeat="contributor in project.contributors">
+                        <img ui-sref="user({id: contributor._id})" src="{{contributor.avatar}}">
+                    </li>
                 </ul>
             </div>
             <div class="project-view-activity project-view-details">
+                <span class="label">Dependencies</span>
                 <ul>
-                    <li>Dependencies: {{project.started}}</li>
+                    <li>{{project.started}}</li>
                 </ul>
             </div>
             <div class="project-view-activity project-view-details">
+                <span class="label">Link</span>
                 <ul>
-                    <li>Links: {{project.started}}</li>
+                    <li><a href="{{project.link}}" target="_blank">{{project.link}}</a></li>
                 </ul>
             </div>
             <div class="project-view-activity project-view-details">
+                <span class="label">Documents</span>
                 <ul>
-                    <li>Resources: {{project.started}}</li>
+                    <li>{{project.documents}}</li>
                 </ul>
             </div>
         </div>
-        
+
     </div>
 </div>

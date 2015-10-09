@@ -8,7 +8,7 @@ var User = mongoose.model('User');
 // Evaluate Id
 router.param('id', function (req, res, next, id) {
 	//Find and populate requested project
-	Project.findById(id).exec()
+	Project.findById(id).populate('contributors').exec()
 	.then(function (project) {
 		if (!project) throw HttpError(404);
 		else {

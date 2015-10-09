@@ -13,12 +13,11 @@ app.controller('ProjectController', function ($scope, $http, $state, AuthService
 
 	$scope.isAContributor = function (project) {
 		if ($scope.user != null){
-			var hasContr = project.contributors.indexOf($scope.user._id);
-			if (hasContr != -1) {
-				return true;
-			} else {
-				return false;
+			var hasContr = false;
+			for (var contributor in project.contributors){
+				if(project.contributors[contributor]._id == $scope.user._id) return true;
 			}
+			return false;
 		} else {
 			return false;
 		}
