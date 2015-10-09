@@ -1,0 +1,17 @@
+.page-header-container {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.hello-bar {
+  height: 3rem;
+  background-color: $uw-red;
+  color: $uw-white;
+  padding-top: .6rem;
+  font-weight: 700;
+
+  a {
+    color: $uw-white;
+  }
+}
