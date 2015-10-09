@@ -15,13 +15,17 @@
     margin: 0;
   }
 
+  h4 {
+    color: $uw-white;
+  }
+
   &.showcase {
     padding-top: 35vh;
-    height: 95vh;
-
-    h4 {
-      color: $uw-white;
-    }
+    height: 95vh;    
+  }
+  &.showcase-shorter {
+    padding-top: 30vh;
+    height: 75vh;
   }
 }
 

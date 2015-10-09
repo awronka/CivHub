@@ -57,6 +57,7 @@ p {
   font-size: 1rem;
   color: $uw-gray-dark;
   &:hover {
+    color: $uw-black;
     text-decoration: underline;
     cursor: pointer;
   }
@@ -64,6 +65,7 @@ p {
 
 .label {
   font-size: 1.2rem;
+  font-weight: 400;
   color: $uw-gray-off;
   display: block;
 }

@@ -19,15 +19,16 @@
         <input ng-model="project.language" />
 
         <span class="label">Problem Tags</span>
-        <input ng-model="project.problem_tags" />        
+        <input ng-model="project.problem_tags" ng-list/>        
 
         <span class="label">Solution Tags</span>
-        <input ng-model="project.solution_tags" /> 
+        <input ng-model="project.solution_tags" ng-list/> 
 
         <span class="label">Description</span>
         <textarea type="text" ng-model="project.description"></textarea>
 
-        <span class="label">Links</span>
+        <span class="label">Link</span>
+        <input ng-model="project.link"/> 
 
       </div>
 
