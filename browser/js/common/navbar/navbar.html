@@ -3,11 +3,11 @@
 
 		<div class="eight columns">
 			<span class='logo' ui-sref="showcase.projects">civhub</span>
-			<form class="eight columns" on-submit ng-submit="submitSearch(query)" ng-hide="$parent.$state.includes('showcase')">
+			<form class="eight columns" on-submit ng-submit="submitSearch(query)" ng-hide="$state.includes('showcase')">
 				<input type="text" placeholder="Find problems and solutions" ng-model='query'/>
 				<button class="uw-btn-default" type='submit' translate="SEARCH"></button>
 			</form>
-			<a href="#" ng-show="$parent.$state.includes('showcase')">Want to use this data for your project?</a>
+			<a ui-sref="dev" ng-show="$state.includes('showcase')">Want to use this data for your project?</a>
 		</div>
 
 		<div class="four columns float-right">

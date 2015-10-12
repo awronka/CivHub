@@ -14,6 +14,9 @@ var schema = new mongoose.Schema({
 	
 	"language": {type: String},
 	"location": {
+		"city": String,
+		"state": String,
+		"country": String,
 		"ISO": String,
 		"coordinates": [Number]
 	},
