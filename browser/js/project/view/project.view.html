@@ -44,6 +44,7 @@
         
         <!-- Sidebar -->
         <div class="four columns float-right">
+
             <div  class="project-view-activity project-view-details">
                 <span class="label">Problem Tags</span>
                 <ul>
@@ -58,7 +59,16 @@
                       <span class="tag" ng-click="$state.go('search', {query: tag});">{{tag}}</span>
                     </li>
                 </ul>
-            </div>            
+            </div>         
+
+            <div>
+                <span class="label">Location</span>
+                <ul>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>   
+
             <div class="project-view-activity project-view-details">
                 <span class="label">{{project.contributors.length}} Contributing</span>
                 <ul>
@@ -67,18 +77,21 @@
                     </li>
                 </ul>
             </div>
+
             <div class="project-view-activity project-view-details">
                 <span class="label">Dependencies</span>
                 <ul>
                     <li>{{project.started}}</li>
                 </ul>
             </div>
+
             <div class="project-view-activity project-view-details">
                 <span class="label">Link</span>
                 <ul>
                     <li><a href="{{project.link}}" target="_blank">{{project.link}}</a></li>
                 </ul>
             </div>
+
             <div class="project-view-activity project-view-details">
                 <span class="label">Documents</span>
                 <ul>

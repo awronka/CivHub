@@ -4,11 +4,11 @@ module.exports = {
   "GITHUB": {
     "clientID": "bae7cf449ea2e3b7b008",
     "clientSecret": "7765c82cfaa6830f9968237f4e40001d17683944",
-    "callbackURL": "http://www.civhub.io/auth/github/callback"
+    "callbackURL": "http://127.0.0.1:1337/auth/github/callback"
   },
   "TWITTER": {
-    "consumerKey": "4DvwjMznzC451qSCpTrG6kVaP",
-    "consumerSecret": "cqh4I8DJbzXPMQ4L1L1PjS3LTu3q9MZdYG6kruCGUnw4xaJlJR",
-    "callbackUrl": "http://www.civhub.io/auth/twitter/callback"
+    "consumerKey": "FWYvfvbV1GawFTiW60N4Q5D6x",
+    "consumerSecret": "7ijMc9ZtnCZJolYvyrXCireu6vfEa9LJOGLbUoSlupS5ESHbSk",
+    "callbackUrl": "http://127.0.0.1:1337/auth/twitter/callback"
   }
 };

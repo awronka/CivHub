@@ -20,6 +20,11 @@ var schema = new mongoose.Schema({
     },
     "language": { type: String },
     "joined": { type: Date, default: Date.now },
+    "location": {
+        "city": String,
+        "state": String,
+        "country": String
+    },
     "isAdmin": { type: Boolean, default: false },
 
     "collaborations": [{type: mongoose.Schema.Types.ObjectId, ref: 'Project'}],
