@@ -61,11 +61,26 @@
                 </ul>
             </div>         
 
-            <div>
+            <div class="project-view-activity project-view-details">
+                <span class="label">Dependencies</span>
+                <ul>
+                    <li ng-repeat="dep in project.dependencies">
+                        <span class="tag">{{dep}}</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="project-view-activity project-view-details">
                 <span class="label">Location</span>
                 <ul>
-                    <li></li>
-                    <li></li>
+                    <li class="tag" ng-show="project.location.city == null && project.location.state == null && project.location.ISO == null">Not recorded</li>
+                    <li class="tag" ng-hide="project.location.city == null && project.location.state == null && project.location.ISO == null">
+                    {{project.location.city}}
+                    <span ng-hide="project.location.city == null || project.location.state == null">,</span>
+                     {{project.location.state}}
+                     {{project.location.ISO}}
+                    </li>
+                    <li class="tag" ng-hide="project.location.coordinates.length == 0">{{project.location.coordinates}}</li>
                 </ul>
             </div>   
 
@@ -79,9 +94,9 @@
             </div>
 
             <div class="project-view-activity project-view-details">
-                <span class="label">Dependencies</span>
+                <span class="label">Documents</span>
                 <ul>
-                    <li>{{project.started}}</li>
+                    <li>{{project.documents}}</li>
                 </ul>
             </div>
 
@@ -92,12 +107,6 @@
                 </ul>
             </div>
 
-            <div class="project-view-activity project-view-details">
-                <span class="label">Documents</span>
-                <ul>
-                    <li>{{project.documents}}</li>
-                </ul>
-            </div>
         </div>
 
     </div>
