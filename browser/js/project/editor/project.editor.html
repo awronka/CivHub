@@ -5,49 +5,50 @@
       <h4>Edit "{{project.title}}"</h4>
 
       <div class="project-editor-tile cf">
-
         <span class="label">Project Title</span>
         <input ng-model="project.title">
-
         <span class="label">Problem Statement</span>
         <input ng-model="project.problem_statement" />
-
         <span class="label">Solution Statement</span>
         <input ng-model="project.solution_statement" />
-
         <span class="label">Language</span>
         <input ng-model="project.language" />
-
         <span class="label">Problem Tags</span>
         <input ng-model="project.problem_tags" ng-list/>        
-
         <span class="label">Solution Tags</span>
         <input ng-model="project.solution_tags" ng-list/> 
-
         <span class="label">Description</span>
         <textarea type="text" ng-model="project.description"></textarea>
-
         <span class="label">Link</span>
         <input ng-model="project.link"/> 
-
       </div>
 
       <div class="project-editor-tile cf">
+        <span class="label">Location - City</span>
+        <input ng-model="project.location.city" /> 
+        <span class="label">Location - State/Province</span>
+        <input ng-model="project.location.state" /> 
+        <span class="label">Location - Country</span>
+        <input ng-model="project.location.ISO" /> 
+      </div>
 
+      <div class="project-editor-tile cf">
+        <span class="label">Dependencies</span>
+        <input ng-model="project.dependencies" ng-list/>
+        <span class="label">Implementations</span>
+        <input ng-model="project.implementations" ng-list/>
+      </div>
+
+      <div class="project-editor-tile cf">
         <span class="label">Activity</span>
-
       </div>
 
       <div class="project-editor-tile cf">
-
         <span class="label">Contributors</span>
-
       </div>
 
       <div class="project-editor-tile cf">
-
         <span class="label">Documents</span>
-
       </div>
 
       <div class="float-right">

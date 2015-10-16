@@ -9,14 +9,13 @@ var schema = new mongoose.Schema({
 	"solution_statement": String,
 	"solution_tags": [String],
 	"description": String,
-	"dependencies": [{type: mongoose.Schema.Types.ObjectId, ref: 'Project'}], //otherwise, use links?
+	"dependencies": [String], //otherwise, use links?
 	"link": String,
 	
 	"language": {type: String},
 	"location": {
 		"city": String,
 		"state": String,
-		"country": String,
 		"ISO": String,
 		"coordinates": [Number]
 	},
@@ -39,7 +38,7 @@ var schema = new mongoose.Schema({
 		"title": String,
 		"file_url": String
 	}],
-	"implementations": [{type: mongoose.Schema.Types.ObjectId, ref: 'Project'}], //otherwise use links?
+	"implementations": [String], //otherwise use links?
 	"contributors": [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],	// embed info in doc? - if so, we have to have a user, not a contact that is bidacity/civic-tracker specific
 
 
