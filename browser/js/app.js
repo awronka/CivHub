@@ -34,7 +34,7 @@ app.config(function ($urlRouterProvider, $locationProvider, $translateProvider, 
 });
 
 // This app.run is for controlling access to specific states.
-app.run(function ($rootScope, AuthService, $state) {
+app.run(function ($rootScope, $state, $window, $location, AuthService) {
 
     // The given state requires an authenticated user.
     var destinationStateRequiresAuth = function (state) {
@@ -73,9 +73,18 @@ app.run(function ($rootScope, AuthService, $state) {
 
     });
 
-    // Make sure always starting at the top of page when changing state
-    $rootScope.$on('$stateChangeSuccess',function(){
+    
+    $rootScope.$on('$stateChangeSuccess',function(event){
+        // Make sure always starting at the top of page when changing state
         $("html, body").animate({ scrollTop: 0 });
+
+        // Use the Google Analytics Tagging Object for Capturing State Change
+        if (!$window.ga) {
+            return;
+        } else {
+            $window.ga('send', 'pageview', { page: $location.path() });            
+        }
     });
+
 
 });
