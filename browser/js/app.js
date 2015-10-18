@@ -73,9 +73,18 @@ app.run(function ($rootScope, AuthService, $state) {
 
     });
 
-    // Make sure always starting at the top of page when changing state
-    $rootScope.$on('$stateChangeSuccess',function(){
+    
+    $rootScope.$on('$stateChangeSuccess',function(event){
+        // Make sure always starting at the top of page when changing state
         $("html, body").animate({ scrollTop: 0 });
+
+        // Use the Google Analytics Tagging Object for Capturing State Change
+        if (!$window.ga) {
+            return;
+        } else {
+            $window.ga('send', 'pageview', { page: $location.path() });            
+        }
     });
+
 
 });
