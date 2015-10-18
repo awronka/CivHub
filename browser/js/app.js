@@ -79,11 +79,8 @@ app.run(function ($rootScope, $state, $window, $location, AuthService) {
         $("html, body").animate({ scrollTop: 0 });
 
         // Use the Google Analytics Tagging Object for Capturing State Change
-        if (!$window.ga) {
-            return;
-        } else {
-            $window.ga('send', 'pageview', { page: $location.path() });            
-        }
+        $window.ga('set',{page:$location.path() + toState.name.replace(/\./g, '/'), title:toState.name});
+        $window.ga('send', 'pageview');
     });
 
 
