@@ -74,7 +74,7 @@ app.run(function ($rootScope, $state, $window, $location, AuthService) {
     });
 
     
-    $rootScope.$on('$stateChangeSuccess',function(event){
+    $rootScope.$on('$stateChangeSuccess',function(event, toState, toParams, fromState, fromParams){
         // Make sure always starting at the top of page when changing state
         $("html, body").animate({ scrollTop: 0 });
 
