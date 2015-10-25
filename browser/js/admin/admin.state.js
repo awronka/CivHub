@@ -7,13 +7,18 @@ app.config(function($stateProvider){
 		controller: 'AdminController',
 		templateUrl: 'js/admin/admin.html',
 		resolve: {
-			GetAdmin : function(AuthService, $state){
+			GetAdmin : function(AuthService){
 				return AuthService.getLoggedInUser().then(function(user){
-					if(user.isAdmin === false){
-						$state.go('showcase');
+						return user;
+				})
+			},
+			GetFirstTenProj: function($http, Project) {
+				Project.fetchAll().then(function(projects){
+					if(projects.length > 10){
+						return projects.slice(0,9)
 					}
 					else{
-						return user;
+						return projects
 					}
 				})
 			}

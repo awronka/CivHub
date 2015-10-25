@@ -1,1 +1,32 @@
-admin panel
+<div class="header-section">
+  <div class="container header-profile">
+    <!-- <img src="{{user.avatar}}" /> -->
+    <h2>Welcome, {{Admin.name}}</h2>
+  </div>
+</div>
+		<div class="eight columns">
+			<span class='logo' ui-sref="showcase.projects">civhub</span>
+			<form class="eight columns" on-submit ng-submit="submitSearch(query)" ng-hide="$state.includes('showcase')">
+				<input type="text" placeholder="Find problems and solutions" ng-model='query'/>
+				<button class="uw-btn-default" type='submit' translate="SEARCH"></button>
+			</form>
+			<a ui-sref="dev" ng-show="$state.includes('showcase')">Want to use this data for your project?</a>
+		</div>
+
+
+<div class="content-section-navigation">
+  <div class="container cf">
+    <ul>
+      <li ui-sref="profile.collaborations" ui-sref-active="active">Collaborations</li>
+      <li ui-sref="profile.appreciations" ui-sref-active="active">Appreciations</li>
+      <li ui-sref="profile.requests" ui-sref-active="active">Requests</li>
+      <li ui-sref="profile.settings" ui-sref-active="active">Settings</li>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <div class="content-section">
+    <!--<ui-view></ui-view>    -->
+  </div>
+</div>
