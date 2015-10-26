@@ -44,6 +44,19 @@ app.factory('Project', function ($http) {
 			})
 	}
 	
+	//get projects based on query
+	Project.getProjectsByName = function(query){
+		return $http.post(Project.url + "search", {query: query}).then(function(res){
+			return Project.map(res.data);
+		});
+	}
+	
+	//Delete a project
+	Project.deleteProject = function(id){
+		return $http.delete(Project.url+id).then(function(res){
+			return res.data;
+		});
+	}
 
 	return Project;
 });

@@ -1,19 +1,17 @@
 <div class="header-section">
   <div class="container header-profile">
     <!-- <img src="{{user.avatar}}" /> -->
-    <h2>Welcome, {{Admin.name}}</h2>
-  </div>
-</div>
-		<div class="eight columns">
-			<span class='logo' ui-sref="showcase.projects">civhub</span>
-			<form class="eight columns" on-submit ng-submit="submitSearch(query)" ng-hide="$state.includes('showcase')">
+    <h2 class="eight columns">Welcome, {{Admin.name}}</h2>
+			<form class="six columns" on-submit ng-submit="submitSearch(query)" ng-change="submitSearch(query)"ng-hide="$state.includes('showcase')">
 				<input type="text" placeholder="Find problems and solutions" ng-model='query'/>
 				<button class="uw-btn-default" type='submit' translate="SEARCH"></button>
 			</form>
-			<a ui-sref="dev" ng-show="$state.includes('showcase')">Want to use this data for your project?</a>
-		</div>
+  </div>
+</div>
 
-
+<div class="eight colums" ng-repeat="project in projects">
+  <span>{{project.name}}</span><div class="delete-box" ng-click="deleteProject(project._id)"><button>X</button></div>
+</div>
 <div class="content-section-navigation">
   <div class="container cf">
     <ul>

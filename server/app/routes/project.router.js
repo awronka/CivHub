@@ -82,11 +82,12 @@ router.post('/create', function (req, res, next) {
 });
 
 // Delete a Project
-router.put('/delete', function (req, res, next) {
+router.delete('/delete/:id', function (req, res, next) {
 	// Find by ID
-	Project.findByIdAndRemove(req.body._id)
+	Project.findByIdAndRemove({_id: req.params.id})
 	.then(function (err, doc) {
-		res.send('Deleted');
+		console.log("this doc has been deleted", doc);
+		res.send(doc);
 	});
 });
 
